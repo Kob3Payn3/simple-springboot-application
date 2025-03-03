@@ -26,8 +26,8 @@ public class PlayerService {
         return playerRepository.findAll().stream().filter(player -> player.getName().toLowerCase().contains(searchedPlayer.toLowerCase())).collect(Collectors.toList());
     }
 
-    public List<Player> getPlayersByAge(int age) {
-        return playerRepository.findByAge(age);
+    public List<Player> getPlayersByPosition(String searchedPosition) {
+        return playerRepository.findAll().stream().filter(player -> player.getPosition().toLowerCase().contains(searchedPosition.toLowerCase())).collect(Collectors.toList());
     }
 
     public Player addPlayer(Player player) {

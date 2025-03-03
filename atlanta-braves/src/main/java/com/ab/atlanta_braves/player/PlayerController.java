@@ -19,9 +19,13 @@ public class PlayerController {
     }
 
     @GetMapping
-    public List<Player> getPlayers(@RequestParam(required = false) String name) {
+    public List<Player> getPlayers(@RequestParam(required = false) String name,
+                                   @RequestParam(required = false) String position) {
         if (name != null) {
             return playerService.getPlayersByName(name);
+        }
+        else if (position != null) {
+            return playerService.getPlayersByPosition(position);
         }
         return playerService.getPlayers();
     }
