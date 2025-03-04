@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en-US">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,24 +17,24 @@
         <table id ="playerTable">
             <thead>
                 <tr>
-                    <th>Id</th>
+                    <th onClick="toggleSort('id')">Id</th>
                     <th onClick="toggleSort('name')">Name</th>
                     <th onClick="toggleSort('age')">Age</th>
-                    <th>Position</th>
-                    <th>Games Played</th>
-                    <th>Plate Appearances</th>
-                    <th>Runs</th>
-                    <th>Hits</th>
-                    <th>Doubles</th>
-                    <th>Triples</th>
-                    <th>Homeruns</th>
-                    <th>RBI</th>
-                    <th>Stolen Bases</th>
-                    <th>Strikeouts</th>
-                    <th>Batting Average</th>
-                    <th>OBP</th>
-                    <th>SLG</th>
-                    <th>OPS</th>
+                    <th onClick="toggleSort('position')">Position</th>
+                    <th onclick="toggleSort('gamesPlayed')">Games Played</th>
+                    <th onclick="toggleSort('plateAppearances')">Plate Appearances</th>
+                    <th onclick="toggleSort('runs')">Runs</th>
+                    <th onclick="toggleSort('hits')">Hits</th>
+                    <th onclick="toggleSort('doubles')">Doubles</th>
+                    <th onclick="toggleSort('triples')">Triples</th>
+                    <th onClick="toggleSort('homeruns')">Homeruns</th>
+                    <th onclick="toggleSort('rbi')">RBI</th>
+                    <th onclick="toggleSort('sb')">Stolen Bases</th>
+                    <th onclick="toggleSort('strikeouts')">Strikeouts</th>
+                    <th onclick="toggleSort('battingAverage')">Batting Average</th>
+                    <th onclick="toggleSort('obp')">OBP</th>
+                    <th onclick="toggleSort('slg')">SLG</th>
+                    <th onclick="toggleSort('ops')">OPS</th>
                 </tr>
             </thead>
             <tbody id ="tableBody">
