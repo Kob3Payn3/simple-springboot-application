@@ -8,6 +8,7 @@ body {
 h1 {
     align-items: center;
     color: black;
+    cursor: pointer;
 }
 
 table {
@@ -27,4 +28,8 @@ th {
     font-weight: 200;
     color: black;
     border: 1px solid black;
+}
+
+tr th:hover {
+    cursor: pointer;
 }
