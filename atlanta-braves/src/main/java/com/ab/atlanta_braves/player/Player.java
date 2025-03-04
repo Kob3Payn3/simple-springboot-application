@@ -25,9 +25,13 @@ public class Player {
     private int rbi;
     private int sb;
     private int strikeouts;
+    @Column(precision = 5, scale = 3)
     private BigDecimal battingAverage;
+    @Column(precision = 5, scale = 3)
     private BigDecimal obp;
+    @Column(precision = 5, scale = 3)
     private BigDecimal slg;
+    @Column(precision = 5, scale = 3)
     private BigDecimal ops;
 
     public Player() {
