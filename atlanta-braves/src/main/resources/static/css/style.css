@@ -1,0 +1,28 @@
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: white;
+}
+
+h1 {
+    align-items: center;
+    color: black;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+tr, td {
+    border: 1px solid black;
+    text-align: center;
+}
+
+th {
+    background-color: white;
+    font-weight: 200;
+    color: black;
+}

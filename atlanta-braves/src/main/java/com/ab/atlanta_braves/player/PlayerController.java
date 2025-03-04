@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "api/v1/player")
+@RequestMapping(path = "/api/v1/player")
 public class PlayerController {
 
     private final PlayerService playerService;
@@ -18,7 +18,7 @@ public class PlayerController {
         this.playerService = playerService;
     }
 
-    @GetMapping
+    @GetMapping("/getPlayers")
     public List<Player> getPlayers(@RequestParam(required = false) String name,
                                    @RequestParam(required = false) String position) {
         if (name != null) {
@@ -51,5 +51,4 @@ public class PlayerController {
         playerService.deletePlayer(playerName);
         return new ResponseEntity<>("Player was deleted.", HttpStatus.OK);
     }
-
 }
