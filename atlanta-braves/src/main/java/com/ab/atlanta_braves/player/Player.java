@@ -14,7 +14,7 @@ public class Player {
     private String position;
 
     private int gamesPlayed;
-    private int plateAppearences;
+    private int plateAppearances;
     private int runs;
     private int hits;
     private int doubles;
@@ -35,7 +35,7 @@ public class Player {
                   int age,
                   String position,
                   int gamesPlayed,
-                  int plateAppearences,
+                  int plateAppearances,
                   int runs,
                   int hits,
                   int doubles,
@@ -52,7 +52,7 @@ public class Player {
         this.age = age;
         this.position = position;
         this.gamesPlayed = gamesPlayed;
-        this.plateAppearences = plateAppearences;
+        this.plateAppearances = plateAppearances;
         this.runs = runs;
         this.hits = hits;
         this.doubles = doubles;
@@ -75,7 +75,7 @@ public class Player {
                 ", age=" + age +
                 ", position='" + position + '\'' +
                 ", gamesPlayed=" + gamesPlayed +
-                ", plateAppearences=" + plateAppearences +
+                ", plateAppearences=" + plateAppearances +
                 ", runs=" + runs +
                 ", hits=" + hits +
                 ", doubles=" + doubles +
@@ -131,12 +131,12 @@ public class Player {
         this.gamesPlayed = gamesPlayed;
     }
 
-    public int getPlateAppearences() {
-        return plateAppearences;
+    public int getPlateAppearances() {
+        return plateAppearances;
     }
 
-    public void setPlateAppearences(int plateAppearences) {
-        this.plateAppearences = plateAppearences;
+    public void setPlateAppearances(int plateAppearances) {
+        this.plateAppearances = plateAppearances;
     }
 
     public int getRuns() {
