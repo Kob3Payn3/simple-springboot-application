@@ -19,10 +19,12 @@ table {
 tr, td {
     border: 1px solid black;
     text-align: center;
+    padding: 20px;
 }
 
 th {
     background-color: white;
     font-weight: 200;
     color: black;
+    border: 1px solid black;
 }
