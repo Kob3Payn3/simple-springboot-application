@@ -2,6 +2,8 @@ package com.ab.atlanta_braves.player;
 
 import jakarta.persistence.*;
 
+import java.math.BigDecimal;
+
 @Entity
 @Table
 public class Player {
@@ -23,10 +25,10 @@ public class Player {
     private int rbi;
     private int sb;
     private int strikeouts;
-    private double battingAverage;
-    private double obp;
-    private double slg;
-    private double ops;
+    private BigDecimal battingAverage;
+    private BigDecimal obp;
+    private BigDecimal slg;
+    private BigDecimal ops;
 
     public Player() {
     }
@@ -44,10 +46,10 @@ public class Player {
                   int rbi,
                   int sb,
                   int strikeouts,
-                  double battingAverage,
-                  double obp,
-                  double slg,
-                  double ops) {
+                  BigDecimal battingAverage,
+                  BigDecimal obp,
+                  BigDecimal slg,
+                  BigDecimal ops) {
         this.name = name;
         this.age = age;
         this.position = position;
@@ -203,35 +205,35 @@ public class Player {
         this.strikeouts = strikeouts;
     }
 
-    public double getBattingAverage() {
+    public BigDecimal getBattingAverage() {
         return battingAverage;
     }
 
-    public void setBattingAverage(double battingAverage) {
+    public void setBattingAverage(BigDecimal battingAverage) {
         this.battingAverage = battingAverage;
     }
 
-    public double getObp() {
+    public BigDecimal getObp() {
         return obp;
     }
 
-    public void setObp(double obp) {
+    public void setObp(BigDecimal obp) {
         this.obp = obp;
     }
 
-    public double getSlg() {
+    public BigDecimal getSlg() {
         return slg;
     }
 
-    public void setSlg(double slg) {
+    public void setSlg(BigDecimal slg) {
         this.slg = slg;
     }
 
-    public double getOps() {
+    public BigDecimal getOps() {
         return ops;
     }
 
-    public void setOps(double ops) {
+    public void setOps(BigDecimal ops) {
         this.ops = ops;
     }
 }
