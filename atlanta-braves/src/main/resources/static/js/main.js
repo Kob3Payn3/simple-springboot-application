@@ -53,14 +53,14 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-let currentSortBy = "name";
+let currentSortBy = "id";
 let currentOrder = "asc";
 
-function fetchPlayers(sortBy = "name", order = "asc") {
+function fetchPlayers(sortBy = "id", order = "asc") {
     currentSortBy = sortBy;
     currentOrder = order;
 
-    fetch('/api/v1/player/getPlayers?sortBy=name&order=desc')
+    fetch(`/api/v1/player/getPlayers?sortBy=${sortBy}&order=${order}`)
         .then(response => response.json())
         .then(players => {
             let tableBody = document.getElementById("tableBody");

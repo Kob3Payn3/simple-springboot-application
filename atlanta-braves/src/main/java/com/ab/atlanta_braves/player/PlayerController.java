@@ -26,6 +26,14 @@ public class PlayerController {
                                    @RequestParam(defaultValue = "asc") String order) {
         Sort.Direction direction = order.equalsIgnoreCase("desc") ? Sort.Direction.DESC : Sort.Direction.ASC;
 
+        if (sortBy == null) {
+            sortBy = "id";
+        }
+
+        if (order == null) {
+            order = "asc"; // makes the ascending order sort default
+        }
+
         if (name != null) {
             return playerService.getPlayersByName(name, Sort.by(direction, sortBy));
         }
