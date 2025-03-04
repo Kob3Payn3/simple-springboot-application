@@ -1,6 +1,7 @@
 package com.ab.atlanta_braves.player;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,14 +21,18 @@ public class PlayerController {
 
     @GetMapping("/getPlayers")
     public List<Player> getPlayers(@RequestParam(required = false) String name,
-                                   @RequestParam(required = false) String position) {
+                                   @RequestParam(required = false) String position,
+                                   @RequestParam(defaultValue = "name") String sortBy,
+                                   @RequestParam(defaultValue = "asc") String order) {
+        Sort.Direction direction = order.equalsIgnoreCase("desc") ? Sort.Direction.DESC : Sort.Direction.ASC;
+
         if (name != null) {
-            return playerService.getPlayersByName(name);
+            return playerService.getPlayersByName(name, Sort.by(direction, sortBy));
         }
         else if (position != null) {
-            return playerService.getPlayersByPosition(position);
+            return playerService.getPlayersByPosition(position, Sort.by(direction, sortBy));
         }
-        return playerService.getPlayers();
+        return playerService.getPlayers(Sort.by(direction, sortBy));
     }
 
     @PostMapping

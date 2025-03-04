@@ -1,6 +1,7 @@
 package com.ab.atlanta_braves.player;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,15 +19,15 @@ public class PlayerService {
         this.playerRepository = playerRepository;
     }
 
-    public List<Player> getPlayers() {
-        return playerRepository.findAll();
+    public List<Player> getPlayers(Sort sort) {
+        return playerRepository.findAll(sort);
     }
 
-    public List<Player> getPlayersByName(String searchedPlayer){
+    public List<Player> getPlayersByName(String searchedPlayer, Sort sort){
         return playerRepository.findAll().stream().filter(player -> player.getName().toLowerCase().contains(searchedPlayer.toLowerCase())).collect(Collectors.toList());
     }
 
-    public List<Player> getPlayersByPosition(String searchedPosition) {
+    public List<Player> getPlayersByPosition(String searchedPosition, Sort sort) {
         return playerRepository.findAll().stream().filter(player -> player.getPosition().toLowerCase().contains(searchedPosition.toLowerCase())).collect(Collectors.toList());
     }
 
