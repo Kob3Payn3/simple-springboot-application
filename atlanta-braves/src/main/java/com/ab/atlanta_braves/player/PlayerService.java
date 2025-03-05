@@ -30,6 +30,8 @@ public class PlayerService {
     public List<Player> getPlayersByPosition(String searchedPosition, Sort sort) {
         return playerRepository.findAll().stream().filter(player -> player.getPosition().toLowerCase().contains(searchedPosition.toLowerCase())).collect(Collectors.toList());
     }
+
+    @Transactional //Don't forget to add this annotation next time to properly insert entries into database
     public Player addPlayer(Player player) {
         playerRepository.save(player);
         return playerRepository.save(player);
@@ -53,7 +55,8 @@ public class PlayerService {
 
     @Transactional
     void deletePlayer(String playerName) {
-        playerRepository.deleteByName(playerName);
+            playerRepository.deleteByName(playerName);
+            playerRepository.flush();
     }
 
 }

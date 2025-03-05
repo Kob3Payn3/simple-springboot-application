@@ -146,7 +146,7 @@ function submitAddPlayerForm(event) {
         position: position
     };
 
-    fetch('/api/v1/player', {
+    fetch(`/api/v1/player`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -163,3 +163,11 @@ function submitAddPlayerForm(event) {
     });
 }
 
+function submitDeletePlayerForm(event) {
+    event.preventDefault();
+
+    const playerName = document.getElementById('playerToDelete').value.trim();
+    const encodedPlayerName = encodeURIComponent(playerName);
+
+    fetch(`/api/v1/player/${encodedPlayerName}`, {method: 'DELETE', headers: {'Content-Type' : 'application/json'}});
+}

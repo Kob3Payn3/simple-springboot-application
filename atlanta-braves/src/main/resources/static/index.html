@@ -36,7 +36,7 @@
                     <button type="submit">Submit</button>
                 </form>
 
-                <form class ="deletePlayerForm" onSubmit="submitDeletePlayerForm()">
+                <form class ="deletePlayerForm" onsubmit="submitDeletePlayerForm(event)">
                     <h3>Delete Existing Player</h3>
                     <label for ="playerToDelete">Delete by player name</label>
                     <input type="text" name="name" id="playerToDelete">
@@ -45,7 +45,7 @@
 
             </div>
 
-            <span class="open-side-nav-span"onClick="openSideNav()" style="cursor:pointer" onclick="openSideNav()">&#9776; Add/Update/Delete</span>
+            <span class="open-side-nav-span"onclick="openSideNav()" style="cursor:pointer" onclick="openSideNav()">&#9776; Add/Update/Delete</span>
 
         </header>
 
