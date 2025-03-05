@@ -97,3 +97,29 @@ function toggleSort(column) {
             fetchPlayers(column, order);
         }
 
+function searchFunction() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("playerSearch");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("playerTable");
+    tr = table.getElementsByTagName("tr");
+
+    let searchableColumns = [1, 2, 3] //Name, age, and position
+
+    for (i = 1; i < tr.length; i++) { //make is start at 1 so it skips the table header
+    let rowVisible = false;
+        td = tr[i].getElementsByTagName("td");
+
+        for (let j of searchableColumns) {
+            if (td[j]) {
+                txtValue = td[j].textContent || td[j].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    rowVisible = true;
+                    break;
+                }
+            }
+        }
+        tr[i].style.display = rowVisible ? "" : "none";
+    }
+}
+

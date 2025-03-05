@@ -11,7 +11,18 @@
     </head>
     <body>
         <header>
-            <h1 onClick="window.location.reload();">Player Data</h1>
+
+            <div class="nav-bar">
+                <nav>
+                    <h1 onClick="window.location.reload();">Player Data (No Pitchers)</h1>
+
+                    <div class="searchbar">
+                        <input type="search" name="search" id="playerSearch" onkeyup="searchFunction()" placeholder="search by name, age, or position">
+                    </div>
+                </nav>
+
+            </div>
+
         </header>
 
         <table id ="playerTable">
@@ -40,6 +51,6 @@
             <tbody id ="tableBody">
             </tbody>
         </table>
-        <script src="js/main.js"></script>
+        <script src="js/main.js?v=1.0"></script>
     </body>
 </html>

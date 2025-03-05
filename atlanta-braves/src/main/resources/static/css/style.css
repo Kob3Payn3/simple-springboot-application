@@ -3,18 +3,40 @@ body {
     margin: 0;
     padding: 20px;
     background-color: white;
+    color: white;
+}
+
+header {
+    padding: 10px 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchbar {
+    margin-left: auto;
+}
+
+#playerSearch {
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
 }
 
 h1 {
     align-items: center;
     color: black;
     cursor: pointer;
+    white-space: no;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    background-color: white;
+    background-color: #13274F;
 }
 
 tr, td {
@@ -25,9 +47,10 @@ tr, td {
 
 th {
     background-color: white;
-    font-weight: 200;
+    font-weight: 500;
     color: black;
     border: 1px solid black;
+    background-color: #CE1141;
 }
 
 tr th:hover {
