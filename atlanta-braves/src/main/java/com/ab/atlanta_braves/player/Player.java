@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 
+//Non-pitcher players
+
 @Entity
 @Table
 public class Player {
