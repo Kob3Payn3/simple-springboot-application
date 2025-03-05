@@ -123,3 +123,13 @@ function searchFunction() {
     }
 }
 
+function openSideNav() {
+    document.getElementById("create-update-side-nav").style.width = "800px";
+    document.getElementById("create-update-side-nav").style.transform = "translateX(0)";
+}
+
+function closeSideNav() {
+    document.getElementById("create-update-side-nav").style.width = "0px";
+    document.getElementById("create-update-side-nav").style.transform = "translateX(-100%)";
+}
+
