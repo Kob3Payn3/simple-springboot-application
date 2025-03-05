@@ -30,10 +30,9 @@ public class PlayerService {
     public List<Player> getPlayersByPosition(String searchedPosition, Sort sort) {
         return playerRepository.findAll().stream().filter(player -> player.getPosition().toLowerCase().contains(searchedPosition.toLowerCase())).collect(Collectors.toList());
     }
-
     public Player addPlayer(Player player) {
         playerRepository.save(player);
-        return player;
+        return playerRepository.save(player);
     }
 
     public Player updatePlayer(Player updatedPlayer) {

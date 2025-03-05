@@ -13,28 +13,32 @@ public class Player {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(nullable = false)
     private String name;
+    @Column(nullable = false)
     private int age;
+    @Column(nullable = false)
     private String position;
 
-    private int gamesPlayed;
-    private int plateAppearances;
-    private int runs;
-    private int hits;
-    private int doubles;
-    private int triples;
-    private int homeruns;
-    private int rbi;
-    private int sb;
-    private int strikeouts;
+    private int gamesPlayed = 0;
+    private int plateAppearances = 0;
+    private int runs = 0;
+    private int hits = 0;
+    private int doubles = 0;
+    private int triples = 0;
+    private int homeruns = 0;
+    private int rbi = 0;
+    private int sb = 0;
+    private int strikeouts = 0;
+
     @Column(precision = 5, scale = 3)
-    private BigDecimal battingAverage;
+    private BigDecimal battingAverage = BigDecimal.valueOf(0.000);;
     @Column(precision = 5, scale = 3)
-    private BigDecimal obp;
+    private BigDecimal obp = BigDecimal.valueOf(0.000);;
     @Column(precision = 5, scale = 3)
-    private BigDecimal slg;
+    private BigDecimal slg = BigDecimal.valueOf(0.000);;
     @Column(precision = 5, scale = 3)
-    private BigDecimal ops;
+    private BigDecimal ops = BigDecimal.valueOf(0.000);;
 
     public Player() {
     }
@@ -59,6 +63,7 @@ public class Player {
         this.name = name;
         this.age = age;
         this.position = position;
+        
         this.gamesPlayed = gamesPlayed;
         this.plateAppearances = plateAppearances;
         this.runs = runs;
@@ -73,6 +78,12 @@ public class Player {
         this.obp = obp;
         this.slg = slg;
         this.ops = ops;
+    }
+
+    public Player(String name, int age, String position) {
+        this.name = name;
+        this.age = age;
+        this.position = position;
     }
 
     @Override

@@ -45,8 +45,14 @@ public class PlayerController {
 
     @PostMapping
     public ResponseEntity<Player> addPlayer(@RequestBody Player player) {
+        Player newPlayer = new Player(player.getName(), player.getAge(), player.getPosition());
         Player playerCreated = playerService.addPlayer(player);
-        return new ResponseEntity<>(playerCreated,HttpStatus.CREATED);
+
+        if (playerCreated != null) {
+            return new ResponseEntity<>(playerCreated, HttpStatus.CREATED);
+        } else {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     @PutMapping

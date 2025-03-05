@@ -133,3 +133,33 @@ function closeSideNav() {
     document.getElementById("create-update-side-nav").style.transform = "translateX(-100%)";
 }
 
+function submitAddPlayerForm(event) {
+    event.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const age = document.getElementById('age').value;
+    const position = document.getElementById('position').value;
+
+    const playerData = {
+        name: name,
+        age: age,
+        position: position
+    };
+
+    fetch('/api/v1/player', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(playerData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Player added:', data);
+
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
+

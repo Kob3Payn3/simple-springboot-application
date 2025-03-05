@@ -25,7 +25,7 @@
 
             <div class="side-nav" id="create-update-side-nav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeSideNav()">&times;</a>
-                <form class="addPlayerForm">
+                <form class="addPlayerForm" onsubmit="submitAddPlayerForm(event)">
                     <h3>Add/Update Existing Players</h3>
                     <label for="name">Player Name</label>
                     <input type="text" name="name" id="name">
@@ -33,13 +33,14 @@
                     <input type="text" name="age" id="age">
                     <label for="position">Player Position</label>
                     <input type="text" name="position" id="position">
-                    <button type="submit" onclick="submitAddPlayerForm()">Submit</button>
+                    <button type="submit">Submit</button>
                 </form>
 
-                <form class ="deletePlayerForm">
+                <form class ="deletePlayerForm" onSubmit="submitDeletePlayerForm()">
                     <h3>Delete Existing Player</h3>
                     <label for ="playerToDelete">Delete by player name</label>
                     <input type="text" name="name" id="playerToDelete">
+                    <button type="submit">Submit</button>
                 </form>
 
             </div>
